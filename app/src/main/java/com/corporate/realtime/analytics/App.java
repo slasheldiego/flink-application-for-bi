@@ -78,7 +78,7 @@ public class App {
         
         counts.print();
 
-        env.addSink(sink);
+        counts.addSink(sink);
 
         env.execute("Stream WorkCount");
     }
