@@ -73,7 +73,7 @@ public class App {
     public static final class Tokenizer implements MapFunction<Tuple2<Integer,String>, Tuple3<Integer,String, Integer>>
     {
         @Override
-        public Tuple2<String, Integer> map(Tuple2<Integer,String> tuple){
+        public Tuple3<Integer, String, Integer> map(Tuple2<Integer,String> tuple){
             return new Tuple3<Integer, String, Integer>(tuple.f0, tuple.f1, 1);
         }
     }
