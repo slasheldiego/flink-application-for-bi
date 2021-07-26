@@ -1,0 +1,19 @@
+{
+    "name": "Event",
+    "namespace": "com.belcorp.realtime.entities",
+    "type": "record",
+    "fields": [
+        {
+            "name": "id",
+            "type": "int"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "count",
+            "type": "int"
+        }
+    ]
+}

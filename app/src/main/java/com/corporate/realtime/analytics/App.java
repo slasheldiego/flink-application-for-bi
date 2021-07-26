@@ -13,6 +13,10 @@ import org.apache.flink.api.java.tuple.Tuple3;
 import org.apache.flink.api.common.functions.FilterFunction;
 import org.apache.flink.api.common.functions.MapFunction;
 
+import org.apache.flink.streaming.api.functions.sink.filesystem.StreamingFileSink;
+import org.apache.flink.formats.parquet.avro.ParquetAvroWriters;
+import org.apache.avro.Schema;
+
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.datastream.DataStream;
 
@@ -65,6 +69,10 @@ public class App {
 
         DataStream<Tuple3<Integer, String,Integer>> counts = tokenized.keyBy(1).sum(2);
 
+        final StreamingFileSink<GenericRecord> sink = StreamingFileSink
+	        .forBulkFormat(outputBasePath, ParquetAvroWriters.forSpecificRecord(schema))
+	        .build();
+        
         counts.print();
 
         env.execute("Stream WorkCount");
