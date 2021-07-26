@@ -52,7 +52,7 @@ public class App {
             }
         );
 
-        DataStream<String> streamFiltered = datastream1.filter(
+        DataStream<Tuple2<Integer,String>> streamFiltered = datastream1.filter(
             new FilterFunction<Tuple2<Integer,String>>()
             {
                 public boolean filter(Tuple2<Integer,String> tuple){
