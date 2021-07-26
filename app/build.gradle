@@ -68,7 +68,7 @@ dependencies {
     compile "org.apache.flink:flink-streaming-java_${scalaBinaryVersion}:${flinkVersion}"
     compile "org.apache.flink:flink-clients_${scalaBinaryVersion}:${flinkVersion}"
     compile "org.apache.flink:flink-parquet_${scalaBinaryVersion}:${flinkVersion}"
-    compile "org.apache.flink:flink-avro_${scalaBinaryVersion}:${flinkVersion}"
+    compile "org.apache.flink:flink-avro_${scalaBinaryVersion}:1.13.0"
     // --------------------------------------------------------------
     // Dependencies that should be part of the shadow jar, e.g.
     // connectors. These must be in the flinkShadowJar configuration!
