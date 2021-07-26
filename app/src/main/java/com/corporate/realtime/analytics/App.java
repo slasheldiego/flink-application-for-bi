@@ -71,7 +71,7 @@ public class App {
 
         DataStream<Tuple3<Integer, String,Integer>> counts = tokenized.keyBy(1).sum(2);
 
-        final StreamingFileSink<GenericRecord> sink = StreamingFileSink
+        final StreamingFileSink<Event> sink = StreamingFileSink
 	        .forBulkFormat("Output", ParquetAvroWriters.forSpecificRecord(Event.class))
 	        .build();
         
