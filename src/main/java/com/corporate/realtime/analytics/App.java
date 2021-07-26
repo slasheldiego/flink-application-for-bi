@@ -56,7 +56,7 @@ public class App {
             new FilterFunction<Tuple2<Integer,String>>()
             {
                 public boolean filter(Tuple2<Integer,String> tuple){
-                    return tuple._2.startsWith("N");
+                    return tuple.f1.startsWith("N");
                 }
             }
         );
@@ -74,7 +74,7 @@ public class App {
     {
         @Override
         public Tuple2<String, Integer> map(Tuple2<Integer,String> tuple){
-            return new Tuple3<Integer, String, Integer>(tuple._1, tuple._2, 1);
+            return new Tuple3<Integer, String, Integer>(tuple.f0, tuple.f1, 1);
         }
     }
 
