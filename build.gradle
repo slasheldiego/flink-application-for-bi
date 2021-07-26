@@ -38,10 +38,6 @@ tasks.withType(JavaCompile) {
 
 applicationDefaultJvmArgs = ["-Dlog4j.configuration=log4j.properties"]
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '6.4.1'
-}
-
 // declare where to find the dependencies of your project
 repositories {
     mavenCentral()
