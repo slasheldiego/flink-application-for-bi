@@ -6,6 +6,8 @@ package com.corporate.realtime.analytics;
 import java.io.PrintStream;
 import java.util.Properties;
 
+import com.corporate.realtime.entities.Event;
+
 import org.apache.flink.api.java.ExecutionEnvironment;
 import org.apache.flink.api.java.DataSet;
 import org.apache.flink.api.java.tuple.Tuple2;
@@ -70,10 +72,12 @@ public class App {
         DataStream<Tuple3<Integer, String,Integer>> counts = tokenized.keyBy(1).sum(2);
 
         final StreamingFileSink<GenericRecord> sink = StreamingFileSink
-	        .forBulkFormat(outputBasePath, ParquetAvroWriters.forSpecificRecord(schema))
+	        .forBulkFormat("Output", ParquetAvroWriters.forSpecificRecord(Event.class))
 	        .build();
         
         counts.print();
+
+        env.addSink(sink);
 
         env.execute("Stream WorkCount");
     }
