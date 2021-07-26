@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package com.belcorp.realtime.entities;  
+package com.corporate.realtime.entities;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Event extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Event\",\"namespace\":\"com.belcorp.realtime.entities\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"count\",\"type\":\"int\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Event\",\"namespace\":\"com.corporate.realtime.entities\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"count\",\"type\":\"int\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public int id;
   @Deprecated public java.lang.CharSequence name;
@@ -96,18 +96,18 @@ public class Event extends org.apache.avro.specific.SpecificRecordBase implement
   }
 
   /** Creates a new Event RecordBuilder */
-  public static com.belcorp.realtime.entities.Event.Builder newBuilder() {
-    return new com.belcorp.realtime.entities.Event.Builder();
+  public static com.corporate.realtime.entities.Event.Builder newBuilder() {
+    return new com.corporate.realtime.entities.Event.Builder();
   }
   
   /** Creates a new Event RecordBuilder by copying an existing Builder */
-  public static com.belcorp.realtime.entities.Event.Builder newBuilder(com.belcorp.realtime.entities.Event.Builder other) {
-    return new com.belcorp.realtime.entities.Event.Builder(other);
+  public static com.corporate.realtime.entities.Event.Builder newBuilder(com.corporate.realtime.entities.Event.Builder other) {
+    return new com.corporate.realtime.entities.Event.Builder(other);
   }
   
   /** Creates a new Event RecordBuilder by copying an existing Event instance */
-  public static com.belcorp.realtime.entities.Event.Builder newBuilder(com.belcorp.realtime.entities.Event other) {
-    return new com.belcorp.realtime.entities.Event.Builder(other);
+  public static com.corporate.realtime.entities.Event.Builder newBuilder(com.corporate.realtime.entities.Event other) {
+    return new com.corporate.realtime.entities.Event.Builder(other);
   }
   
   /**
@@ -122,11 +122,11 @@ public class Event extends org.apache.avro.specific.SpecificRecordBase implement
 
     /** Creates a new Builder */
     private Builder() {
-      super(com.belcorp.realtime.entities.Event.SCHEMA$);
+      super(com.corporate.realtime.entities.Event.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(com.belcorp.realtime.entities.Event.Builder other) {
+    private Builder(com.corporate.realtime.entities.Event.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -143,8 +143,8 @@ public class Event extends org.apache.avro.specific.SpecificRecordBase implement
     }
     
     /** Creates a Builder by copying an existing Event instance */
-    private Builder(com.belcorp.realtime.entities.Event other) {
-            super(com.belcorp.realtime.entities.Event.SCHEMA$);
+    private Builder(com.corporate.realtime.entities.Event other) {
+            super(com.corporate.realtime.entities.Event.SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = true;
@@ -165,7 +165,7 @@ public class Event extends org.apache.avro.specific.SpecificRecordBase implement
     }
     
     /** Sets the value of the 'id' field */
-    public com.belcorp.realtime.entities.Event.Builder setId(int value) {
+    public com.corporate.realtime.entities.Event.Builder setId(int value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -178,7 +178,7 @@ public class Event extends org.apache.avro.specific.SpecificRecordBase implement
     }
     
     /** Clears the value of the 'id' field */
-    public com.belcorp.realtime.entities.Event.Builder clearId() {
+    public com.corporate.realtime.entities.Event.Builder clearId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -189,7 +189,7 @@ public class Event extends org.apache.avro.specific.SpecificRecordBase implement
     }
     
     /** Sets the value of the 'name' field */
-    public com.belcorp.realtime.entities.Event.Builder setName(java.lang.CharSequence value) {
+    public com.corporate.realtime.entities.Event.Builder setName(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.name = value;
       fieldSetFlags()[1] = true;
@@ -202,7 +202,7 @@ public class Event extends org.apache.avro.specific.SpecificRecordBase implement
     }
     
     /** Clears the value of the 'name' field */
-    public com.belcorp.realtime.entities.Event.Builder clearName() {
+    public com.corporate.realtime.entities.Event.Builder clearName() {
       name = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -214,7 +214,7 @@ public class Event extends org.apache.avro.specific.SpecificRecordBase implement
     }
     
     /** Sets the value of the 'count' field */
-    public com.belcorp.realtime.entities.Event.Builder setCount(int value) {
+    public com.corporate.realtime.entities.Event.Builder setCount(int value) {
       validate(fields()[2], value);
       this.count = value;
       fieldSetFlags()[2] = true;
@@ -227,7 +227,7 @@ public class Event extends org.apache.avro.specific.SpecificRecordBase implement
     }
     
     /** Clears the value of the 'count' field */
-    public com.belcorp.realtime.entities.Event.Builder clearCount() {
+    public com.corporate.realtime.entities.Event.Builder clearCount() {
       fieldSetFlags()[2] = false;
       return this;
     }
