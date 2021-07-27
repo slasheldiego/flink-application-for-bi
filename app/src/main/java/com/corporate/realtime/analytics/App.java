@@ -80,7 +80,7 @@ public class App {
                 });
 
         final StreamingFileSink<Event> sink = StreamingFileSink
-	        .forBulkFormat(new Path("Output"), ParquetAvroWriters.forSpecificRecord(Event.class))
+	        .forBulkFormat(new Path("s3://belc-bigdata-landing-dlk-dlkdev/temp/streaming"), ParquetAvroWriters.forSpecificRecord(Event.class))
 	        .build();
         
         counts.print();
