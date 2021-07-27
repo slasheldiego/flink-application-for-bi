@@ -79,14 +79,14 @@ public class App {
                     }                                                                            
                 });
 
-        final StreamingFileSink<Event> sink = StreamingFileSink
-	        .forBulkFormat(new Path("s3p://belc-bigdata-landing-dlk-dlkdev/temp/streaming"), 
-            ParquetAvroWriters.forSpecificRecord(Event.class))
-	        .build();
+        //final StreamingFileSink<Event> sink = StreamingFileSink
+	        //.forBulkFormat(new Path("s3p://belc-bigdata-landing-dlk-dlkdev/temp/streaming"), 
+            //ParquetAvroWriters.forSpecificRecord(Event.class))
+	        //.build();
         
         counts.print();
 
-        counts.addSink(sink);
+        //counts.addSink(sink);
 
         env.execute("Stream WorkCount");
     }
