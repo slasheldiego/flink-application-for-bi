@@ -70,7 +70,14 @@ public class App {
 
         DataStream<Tuple3<Integer, String, Integer>> tokenized = streamFiltered.map(new Tokenizer());
 
-        DataStream<Tuple3<Integer, String,Integer>> counts = tokenized.keyBy(1).sum(2);
+        DataStream<Event> counts = tokenized.keyBy(1).sum(2)
+                .map(new MapFuntion<Tuple3<Integer,String,Integer>, Event>()
+                {
+                    @Override
+                    public Event map(Tuple3<Integer,String,Integer> tuple){
+                        return new Event(tuple.f0, tuple.f1, tuple.f2);
+                    }                                                                            
+                });
 
         final StreamingFileSink<Event> sink = StreamingFileSink
 	        .forBulkFormat(new Path("Output"), ParquetAvroWriters.forSpecificRecord(Event.class))
