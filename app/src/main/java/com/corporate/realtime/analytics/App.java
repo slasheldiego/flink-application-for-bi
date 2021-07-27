@@ -71,7 +71,7 @@ public class App {
         DataStream<Tuple3<Integer, String, Integer>> tokenized = streamFiltered.map(new Tokenizer());
 
         DataStream<Event> counts = tokenized.keyBy(1).sum(2)
-                .map(new MapFuntion<Tuple3<Integer,String,Integer>, Event>()
+                .map(new MapFunction<Tuple3<Integer,String,Integer>, Event>()
                 {
                     @Override
                     public Event map(Tuple3<Integer,String,Integer> tuple){
